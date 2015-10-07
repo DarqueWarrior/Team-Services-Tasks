@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatIsMyIP", "WhatIsMyIP\WhatIsMyIP.csproj", "{B06E399A-83EA-4031-A81E-6A90D1328FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B06E399A-83EA-4031-A81E-6A90D1328FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06E399A-83EA-4031-A81E-6A90D1328FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06E399A-83EA-4031-A81E-6A90D1328FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06E399A-83EA-4031-A81E-6A90D1328FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
