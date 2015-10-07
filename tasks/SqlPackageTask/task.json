@@ -1,0 +1,150 @@
+{
+    "id": "c1123235-eb54-40d9-9a1a-045e8c040699",
+    "name": "AzureSqlPackageDatPacDeployer",
+    "friendlyName": "Azure SQL Database Deployment",
+    "description": "Deploy a dacpac to Azure SQL Database",
+    "category": "Deploy",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "author": "Microsoft Corporation",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 12
+    },
+    "demands": [
+        "azureps"
+    ],
+    "inputs": [
+        {
+            "name": "ConnectedServiceName",
+            "type": "connectedService:Azure",
+            "label": "Azure Subscription",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Azure subscription to target for deployment."
+        },
+        {
+            "name": "location",
+            "type": "pickList",
+            "label": "Database Location",
+            "defaultValue": "Central US",
+            "required": true,
+            "helpMarkDown": "The regional to create the server",
+            "options": {
+                "Central US": "Central US",
+                "East US 2": "East US 2",
+                "South Central US": "South Central US",
+                "North Central US": "North Central US",
+                "West US": "West US",
+                "East US": "East US",
+                "Japan West": "Japan West",
+                "East Asia": "East Asia",
+                "Southeast Asia": "Southeast Asia",
+                "Japan East": "Japan East",
+                "India Central": "India Central",
+                "India West": "India West",
+                "India South": "India South",
+                "North Europe": "North Europe",
+                "West Europe": "West Europe",
+                "Brazil South": "Brazil South",
+                "Australia East": "Australia East",
+                "Australia Southeast": "Australia Southeast"
+            }
+        },
+        {
+            "name": "dbname",
+            "type": "string",
+            "label": "Database Name",
+            "required": true,
+            "helpMarkDown": "Name of the database"
+        },
+        {
+            "name": "username",
+            "type": "string",
+            "label": "Server Login",
+            "required": true,
+            "helpMarkDown": "The server login name"
+        },
+        {
+            "name": "password",
+            "type": "string",
+            "label": "Server Password",
+            "required": true,
+            "helpMarkDown": "The server login password"
+        },
+        {
+            "name": "dbEdition",
+            "type": "pickList",
+            "label": "Pricing Tier",
+            "required": true,
+            "defaultValue": "Standard",
+            "helpMarkDown": "Azure SQL Database Service Tiers (Editions)",
+            "options": {
+                "Basic": "Basic",
+                "Standard": "Standard",
+                "Premium": "Premium",
+                "Web": "Web",
+                "Business": "Business"
+            }
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "required": false,
+            "helpMarkDown": "If provided will be used to search for an exsiting server"
+        },
+        {
+            "name": "dacpacPath",
+            "type": "filePath",
+            "label": "Path",
+            "required": true,
+            "helpMarkDown": "Path to dacpac file to deploy"
+        },
+        {
+            "name": "version",
+            "type": "pickList",
+            "label": "Version",
+            "defaultValue": "2.0",
+            "required": true,
+            "helpMarkDown": "Specifies the type of SQL Database Server to create. Accepts values 2.0 or 12.0",
+            "options": {
+                "2.0": "2.0",
+                "12.0": "12.0"
+            }
+        },
+        {
+            "name": "releaseID",
+            "type": "string",
+            "label": "Release ID",
+            "required": true,
+            "helpMarkDown": "The unique ID used to look up values in the WebOps store"
+        },
+        {
+            "name": "additionalArgs",
+            "type": "string",
+            "label": "Additional Arguments",
+            "required": false,
+            "helpMarkDown": "Additional arguments to pass to SqlPackage.exe"
+        },
+        {
+            "name": "webOpsStoreURL",
+            "type": "string",
+            "label": "WebOps URL",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The URL to a Web Service that provides an API for getting your external IP and storing Key Value pairs. http://www.donovanbrown.com/post/2015/05/15/i-need-my-external-ip-in-my-powershell"
+        }
+    ],
+    "instanceNameFormat": "Deploy dacpac to Sql Azure",
+    "execution": {
+        "AzurePowerShell": {
+            "target": "$(currentDirectory)\\deploydacpac.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

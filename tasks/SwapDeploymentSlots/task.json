@@ -1,0 +1,62 @@
+{
+   "id": "cb9fd2e1-1599-4d6f-9ed7-8e7259c25b01",
+   "name": "SwapDeploymentSlots",
+   "friendlyName": "Swap Deployment Slots",
+   "description": "Swaps two deployment slots of an Azure Website",
+   "category": "Deploy",
+   "visibility": [
+      "Build",
+      "Release"
+   ],
+   "author": "Microsoft Corporation",
+   "version": {
+      "Major": 1,
+      "Minor": 0,
+      "Patch": 2
+   },
+   "demands": [
+      "azureps"
+   ],
+   "inputs": [
+      {
+         "name": "ConnectedServiceName",
+         "type": "connectedService:Azure",
+         "label": "Azure Subscription",
+         "defaultValue": "",
+         "required": true,
+         "helpMarkDown": "Azure subscription to target for deployment."
+      },
+      {
+         "name": "AzureWebsiteName",
+         "type": "string",
+         "label": "Website Name",
+         "defaultValue": "",
+         "required": true,
+         "helpMarkDown": "Azure Website with slots you want to swap."
+      },
+      {
+         "name": "From",
+         "type": "string",
+         "label": "From Slot",
+         "defaultValue": "",
+         "required": true,
+         "helpMarkDown": "The slot you want to swap from."
+      },
+      {
+         "name": "To",
+         "type": "string",
+         "label": "To Slot",
+         "defaultValue": "",
+         "required": true,
+         "helpMarkDown": "The slot you want to swap to."
+      }
+   ],
+   "instanceNameFormat": "Swapping slots on $(AzureWebsiteName) website",
+   "execution": {
+      "AzurePowerShell": {
+         "target": "$(currentDirectory)\\SwapDeploymentSlots.ps1",
+         "argumentFormat": "",
+         "workingDirectory": "$(currentDirectory)"
+      }
+   }
+}
