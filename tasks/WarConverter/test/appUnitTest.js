@@ -38,8 +38,9 @@ describe('app', function () {
          assert.equal(taskStub.getCall(0).args[0], '**/*.war', 'warFilePath arg is not correct. ' + taskStub.getCall(0).args[0]);
          assert.equal(taskStub.getCall(0).args[1], 'd:/temp', 'dir arg is not correct. ' + taskStub.getCall(0).args[1]);
          
-         assert.equal(input.calledOnce, true, 'tl.getInput not called ' + input.callCount);
-         assert.equal(input.getCall(0).args[0], 'cwd', 'name arg is not correct ' + input.getCall(0).args[0]);
+         assert.equal(input.calledTwice, true, 'tl.getInput not called ' + input.callCount);
+         assert.equal(input.getCall(0).args[0], 'copyRoot', 'name arg is not correct ' + input.getCall(0).args[0]);
+         assert.equal(input.getCall(1).args[0], 'cwd', 'name arg is not correct ' + input.getCall(1).args[0]);
          assert.equal(pathInput.calledOnce, true, 'tl.getPathInput not called ' + pathInput.callCount);
          assert.equal(pathInput.getCall(0).args[0], 'warFilePath', 'name arg is not correct ' + pathInput.getCall(0).args[0]);
       }
