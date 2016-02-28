@@ -1,0 +1,31 @@
+{
+  "name": "warconverter",
+  "version": "1.0.0",
+  "description": "Converts a war file so it can be uploaded to an Azure Web App. It also supports replacing tokens in the war conversion.",
+  "main": "./src/app.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R list",
+    "myscript": "echo 'hello world'"
+  },
+  "repository": {},
+  "keywords": [
+    "Azure",
+    "War",
+    "Java"
+  ],
+  "author": "Donovan Brown",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "cli": "^0.11.1",
+    "unzip2": "^0.2.5",
+    "vso-task-lib": "^0.5.5",
+    "yazl": "^2.3.0"
+  }
+}

@@ -1,0 +1,53 @@
+{
+   "id": "3d825813-681a-4e86-bcf7-b8b781418337",
+   "name": "WarConverter",
+   "friendlyName": "War Converter",
+   "description": "Converts a war file so it can be uploaded to an Azure Web App. It also supports replacing tokens in the war conversion.",
+   "author": "Donovan Brown",
+   "helpMarkDown": "Replace with markdown to show in help",
+   "category": "Utility",
+   "visibility": [
+      "Build",
+      "Release"
+   ],
+   "demands": [],
+   "version": {
+      "Major": "1",
+      "Minor": "0",
+      "Patch": "8"
+   },
+   "minimumAgentVersion": "1.83.0",
+   "instanceNameFormat": "WarConverter $(warFilePath)",
+   "inputs": [
+      {
+         "name": "copyRoot",
+         "type": "filePath",
+         "label": "Copy Root",
+         "defaultValue": "",
+         "required": false,
+         "helpMarkDown": "Root folder to apply copy patterns to.  Empty is the root of the repo.  Use variables if build steps building outside the repo. Example: $(agent.builddirectory)."
+      },
+      {
+         "name": "warFilePath",
+         "type": "filePath",
+         "label": "War file",
+         "defaultValue": "**/*.war",
+         "required": true,
+         "helpMarkDown": "Path or mini-match pattern to war file to use."
+      },
+      {
+         "name": "cwd",
+         "type": "filePath",
+         "label": "Working Directory",
+         "defaultValue": "$(System.DefaultWorkingDirectory)",
+         "required": false,
+         "helpMarkDown": "Current working directory when War Converter is run."
+      }
+   ],
+   "execution": {
+      "Node": {
+         "target": "./src/app.js",
+         "argumentFormat": ""
+      }
+   }
+}
