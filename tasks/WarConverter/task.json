@@ -2,7 +2,7 @@
    "id": "3d825813-681a-4e86-bcf7-b8b781418337",
    "name": "WarConverter",
    "friendlyName": "War Converter",
-   "description": "Converts a war file so it can be uploaded to an Azure Web App. It also supports replacing tokens in the war conversion.",
+   "description": "Converts a war file so it can be uploaded to an Azure Web App.",
    "author": "Donovan Brown",
    "helpMarkDown": "Replace with markdown to show in help",
    "category": "Utility",
@@ -14,7 +14,7 @@
    "version": {
       "Major": "1",
       "Minor": "0",
-      "Patch": "8"
+      "Patch": "15"
    },
    "minimumAgentVersion": "1.83.0",
    "instanceNameFormat": "WarConverter $(warFilePath)",
