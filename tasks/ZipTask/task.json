@@ -1,0 +1,45 @@
+{
+  "id": "4f6c7dfd-2b3e-4c2d-96ca-42e5daf373e3",
+  "name": "TrackyonZip",
+  "friendlyName": "Trackyon Zip",
+  "description": "A task for that zips a folder.",
+  "author": "Trackyon LLC",
+  "helpMarkDown": "Zips a folder",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "Zip $(folderToZip)",
+  "inputs": [
+    {
+      "name": "folderToZip",
+      "type": "filePath",
+      "label": "Folder to Zip",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Folder to zip"
+    },
+    {
+      "name": "outputPath",
+      "type": "filePath",
+      "label": "Path to final Zip file",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Full path of zip file to be created."
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "./src/app.js",
+      "argumentFormat": ""
+    }
+  }
+}

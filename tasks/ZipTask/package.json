@@ -1,0 +1,25 @@
+{
+  "name": "trackyonutils",
+  "version": "1.0.6",
+  "description": "A collection of tasks for Team Services Build and Release",
+  "main": "./src/app.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R list"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "Trackyon LLC",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "unzip2": "^0.2.5",
+    "vso-task-lib": "^0.5.5",
+    "yazl": "^2.3.1"
+  }
+}
